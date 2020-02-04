@@ -1,0 +1,8 @@
+<h3>Cart</h3>
+<ul *ngIf="cartContent.length; else elseBlock">
+  <li *ngFor="let cartItem of cartContent">
+    {{cartItem.name}}
+  </li>
+  <li><button (click)="onRemove()">Clean cart</button></li>
+</ul>
+<ng-template #elseBlock>Cart empty</ng-template>
