@@ -8,3 +8,15 @@ All notable changes to this project will be documented in this file.
 - Cart
 - Cart cleanup possibility
 
+## 2020-02-05
+### Added
+- Module structure
+- Possibility to add products to cart
+- NgClass and Directive for coloring
+- App title
+
+### Changed
+- Removed redundant FirstComponent
+- Product structure
+- Cart list structure
+- Product model from interface to class

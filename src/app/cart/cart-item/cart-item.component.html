@@ -1,0 +1,8 @@
+<li>
+  <button (click)="onRemove(product)">x</button>
+  {{product.name}} - {{product.price}},
+  quantity:
+  <button (click)="onIncrease(product)">+1</button>
+  {{product.quantity}}
+  <button (click)="onDecrease(product)">-1</button>
+</li>

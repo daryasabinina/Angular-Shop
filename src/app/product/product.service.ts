@@ -2,19 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { Product } from './product.model';
 
-const tshirt = {
-  name: 't-shirt',
-  description: 'basic top item',
-  isAvailable: false,
-  price: 15
-} as Product;
-
-const candy = {
-  name: 'Candy',
-  description: 'delicious item',
-  isAvailable: true,
-  price: 5
-} as Product;
+const tshirt = new Product('t-shirt', 'basic top item', false, 15, 1);
+const candy = new Product('Candy', 'delicious item', true, 5, 1);
+const cucumber = new Product('cucumber', 'vegetable', true, 7, 1);
+const dress = new Product('dress', 'basic women item', true, 150, 1);
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +16,6 @@ export class ProductService {
   constructor() { }
 
   getProducts(): Array<Product> {
-    return [candy, tshirt];
+    return [candy, tshirt, dress, cucumber];
   }
 }

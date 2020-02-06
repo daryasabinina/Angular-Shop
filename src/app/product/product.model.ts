@@ -1,6 +1,11 @@
-export interface Product {
-  name: string;
-  description: string;
-  isAvailable: boolean;
-  price: number;
+export class Product {
+  constructor(
+    public name: string,
+    public description: string,
+    public isAvailable: boolean,
+    public price: number,
+    public quantity: number
+  ) {
+    this.quantity = quantity || 1;
+  }
 }
