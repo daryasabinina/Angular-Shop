@@ -2,7 +2,8 @@
 <div *ngIf="cartContent.length; else elseBlock">
   <ol>
     <app-cart *ngFor="let product of cartContent"
-              [product]="product">
+              [product]="product"
+              appFontClick="20px">
     </app-cart>
   </ol>
   <button (click)="onRemove()">Clean cart</button>

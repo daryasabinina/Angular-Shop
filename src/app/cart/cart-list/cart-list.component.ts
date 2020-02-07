@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { Subscription } from 'rxjs';
-
 import { CartService } from '../cart.service';
 
 @Component({
@@ -34,7 +32,7 @@ export class CartListComponent implements OnInit, OnDestroy {
   }
 
   onRemove() {
-    this.cartService.cleanCart();
+    this.cartService.removeAllProducts();
     this.cartContent = this.cartService.getCartContent();
   }
 

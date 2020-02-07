@@ -6,13 +6,16 @@ import { CartItemComponent } from './cart-item/cart-item.component';
 
 import { CartService } from './cart.service';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   declarations: [
     CartListComponent,
     CartItemComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   providers: [CartService],
   exports: [

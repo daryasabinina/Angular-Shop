@@ -23,6 +23,10 @@ export class CartService {
   // Observable string streams
   public channel$ = this.channel.asObservable();
 
+  public cartProducts = this.getCartContent();
+  public totalQuantity = this.getQuantity();
+  public totalSum = this.getFullPrice();
+
 
   getCartContent(): Array<Product> {
     return cart;
@@ -46,12 +50,14 @@ export class CartService {
     return price;
   }
 
-  cleanCart() {
+  removeAllProducts() {
     cart = [];
+
+    this.updateCartData();
     this.channel.next();
   }
 
-  addToCart(product) {
+  addProduct(product) {
     let existingProductIndex;
 
     cart.forEach((cartitem, i) => {
@@ -61,6 +67,8 @@ export class CartService {
     });
 
     existingProductIndex ? cart[existingProductIndex].quantity += 1 : cart.push(product);
+
+    this.updateCartData();
     this.channel.next();
   }
 
@@ -71,6 +79,7 @@ export class CartService {
       }
     });
 
+    this.updateCartData();
     this.channel.next();
   }
 
@@ -84,7 +93,12 @@ export class CartService {
         }
       }
     });
-
+    this.updateCartData();
     this.channel.next();
+  }
+
+  updateCartData() {
+    this.totalQuantity = this.getQuantity();
+    this.totalSum = this.getFullPrice();
   }
 }
