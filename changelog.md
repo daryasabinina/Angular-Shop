@@ -21,12 +21,8 @@ All notable changes to this project will be documented in this file.
 - Cart list structure
 - Product model from interface to class
 
-## 2020-02-05
+## 2020-02-07
 ### Added
 - Fields with content, quantity and price to CartService
-
-### Changed
-- Removed redundant FirstComponent
-- Product structure
-- Cart list structure
-- Product model from interface to class
+- Constant, Factory, Config services
+- Click directive on cart item
