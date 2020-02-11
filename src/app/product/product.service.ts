@@ -19,3 +19,5 @@ export class ProductService {
     return [candy, tshirt, dress, cucumber];
   }
 }
+// Разложите файлы этой папки по отдельным папкам. Так будет удобнее.
+// Например components, models, services, ...

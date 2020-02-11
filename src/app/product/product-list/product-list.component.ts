@@ -12,7 +12,7 @@ import { Product } from '../product.model';
 
 export class ProductListComponent implements OnInit {
 
-  products;
+  products; // что это? описать тип свойства
 
   constructor(
     public productService: ProductService,

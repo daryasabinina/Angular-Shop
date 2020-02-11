@@ -4,8 +4,8 @@ export class Product {
     public description: string,
     public isAvailable: boolean,
     public price: number,
-    public quantity: number
+    public quantity: number = 1 // можно тут
   ) {
-    this.quantity = quantity || 1;
+    // this.quantity = quantity || 1;
   }
 }

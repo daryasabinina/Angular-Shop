@@ -14,10 +14,10 @@ import { CartService } from './cart.service';
   imports: [
     CommonModule
   ],
-  providers: [CartService],
+  // providers: [CartService], // сервис уже зарегитрирован
   exports: [
     CartListComponent,
-    CartItemComponent
+    // CartItemComponent // компонент приватный
   ]
 
 })

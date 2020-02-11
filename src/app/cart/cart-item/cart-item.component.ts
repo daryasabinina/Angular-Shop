@@ -16,13 +16,14 @@ export class CartItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  // добавить тип для параметров ниже
   onRemove(product) {
     this.cartService.removeProduct(product);
 
   }
 
   onIncrease(product) {
-    this.cartService.changeProductQuantity(product, 'sum');
+    this.cartService.changeProductQuantity(product, 'sum'); // думаю лучше использовать +1, -1. Умножив на это число сразу прибавляем или отнимаем, код будет проще
   }
 
   onDecrease(product) {

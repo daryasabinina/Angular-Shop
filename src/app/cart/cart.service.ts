@@ -29,6 +29,7 @@ export class CartService {
   }
 
   getQuantity() {
+    // попробуйте поменять forEach на reduce
     let quantity = 0;
     cart.forEach((cartitem) => {
       quantity += cartitem.quantity;
@@ -38,6 +39,7 @@ export class CartService {
   }
 
   getFullPrice() {
+    // комментарий аналогичен предыдущему
     let price = 0;
     cart.forEach((cartitem) => {
       price += cartitem.quantity * cartitem.price;
@@ -47,7 +49,7 @@ export class CartService {
   }
 
   cleanCart() {
-    cart = [];
+    cart = []; // это подход немутируемых данных
     this.channel.next();
   }
 
@@ -60,11 +62,12 @@ export class CartService {
       }
     });
 
-    existingProductIndex ? cart[existingProductIndex].quantity += 1 : cart.push(product);
+    existingProductIndex ? cart[existingProductIndex].quantity += 1 : cart.push(product); // а это подход мутируемых данных. желательно придерживатся одного подхода
     this.channel.next();
   }
 
   removeProduct(product) {
+    // так лучше не делать. используйте findIndex + splice
     cart.forEach((cartitem, i) => {
       if (cartitem.name === product.name) {
         cart.splice(i, 1);

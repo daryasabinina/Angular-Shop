@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  // модель есть, а параметр без типа, добавить тип
   onBuy(product) {
     this.buyProduct.emit(product);
   }

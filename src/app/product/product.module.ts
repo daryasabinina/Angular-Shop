@@ -18,9 +18,9 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule
   ],
-  providers: [ProductService],
+  // providers: [ProductService], сервис уже зарегистрирован через свой декоратор
   exports: [
-    ProductComponent,
+    // ProductComponent, // не нужен как публичный
     ProductListComponent
   ]
 })

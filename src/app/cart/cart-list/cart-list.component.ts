@@ -11,6 +11,7 @@ import { CartService } from '../cart.service';
 })
 export class CartListComponent implements OnInit, OnDestroy {
 
+  // описать типы полей
   sub;
   cartContent;
   fullPrice;
