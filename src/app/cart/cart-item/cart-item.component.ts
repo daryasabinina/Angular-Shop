@@ -16,6 +16,7 @@ export class CartItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Добавить типі параметров
   onRemove(product) {
     this.cartService.removeProduct(product);
 

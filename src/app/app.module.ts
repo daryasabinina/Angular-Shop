@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 
 /* components */
 import { AppComponent } from './app.component';
+// лишний импорт
 import { HoverElementDirective } from './shared/hover-element.directive';
 
 @NgModule({

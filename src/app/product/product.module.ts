@@ -20,8 +20,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   providers: [ProductService],
   exports: [
-    ProductComponent,
-    ProductListComponent
+    // ProductComponent, // компонент приватный
+    // ProductListComponent // сервис уже зарегистрирован через свой декоратор
   ]
 })
 export class ProductModule { }
