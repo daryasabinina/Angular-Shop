@@ -15,7 +15,7 @@ export class ProductService {
 
   constructor() { }
 
-  getProducts(): Array<Product> {
+  getProducts(): Product[] {
     return [candy, tshirt, dress, cucumber];
   }
 }

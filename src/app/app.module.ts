@@ -7,10 +7,10 @@ import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
 import { OrderModule } from './order/order.module';
 import { SharedModule } from './shared/shared.module';
+import { AboutModule } from './about/about.module';
 
 /* components */
 import { AppComponent } from './app.component';
-import { HoverElementDirective } from './shared/hover-element.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { HoverElementDirective } from './shared/hover-element.directive';
     ProductModule,
     CartModule,
     OrderModule,
+    AboutModule,
     SharedModule
   ],
   providers: [],

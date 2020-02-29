@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-
 import { Subscription } from 'rxjs';
 
 import { CartService } from '../cart.service';
+import { Product } from '../../product/product.model';
 
 @Component({
   selector: 'app-cart-list',
@@ -11,10 +11,10 @@ import { CartService } from '../cart.service';
 })
 export class CartListComponent implements OnInit, OnDestroy {
 
-  sub;
-  cartContent;
-  fullPrice;
-  fullQuantity;
+  subscription: Subscription;
+  cartContent: Product[];
+  fullPrice: number;
+  fullQuantity: number;
 
   constructor(public cartService: CartService) { }
 
@@ -23,18 +23,18 @@ export class CartListComponent implements OnInit, OnDestroy {
     this.fullPrice = this.cartService.getFullPrice();
     this.fullQuantity = this.cartService.getQuantity();
 
-    this.sub = this.cartService.channel$.subscribe(() => {
+    this.subscription = this.cartService.channel$.subscribe(() => {
       this.fullPrice = this.cartService.getFullPrice();
       this.fullQuantity = this.cartService.getQuantity();
     });
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
   onRemove() {
-    this.cartService.cleanCart();
+    this.cartService.removeAllProducts();
     this.cartContent = this.cartService.getCartContent();
   }
 

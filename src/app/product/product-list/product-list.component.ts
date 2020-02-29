@@ -6,21 +6,21 @@ import { Product } from '../product.model';
 
 @Component({
   selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  templateUrl: 'product-list.component.html',
+  styleUrls: ['product-list.component.scss']
 })
 
 export class ProductListComponent implements OnInit {
 
-  products;
+  products: Product[];
 
   constructor(
     public productService: ProductService,
     private cartService: CartService
   ) { }
 
-  onBuyProduct(product: Product): void {
-    this.cartService.addToCart(product);
+  onBuyProduct(product: Product) {
+    this.cartService.addProduct(product);
   }
 
   ngOnInit() {
