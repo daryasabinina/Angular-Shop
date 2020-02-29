@@ -8,12 +8,12 @@ export class HoverElementDirective {
   @HostBinding('style.background') private background;
 
   @HostListener('mouseenter', ['$event'])
-  enter(event: Event): void {
+  enter(event: Event) {
     this.background = 'lightgreen';
   }
 
   @HostListener('mouseleave', ['$event'])
-  leave(event: Event): void {
+  leave(event: Event) {
     this.background = 'transparent';
   }
 

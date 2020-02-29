@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { CartService } from '../cart.service';
 import { Product } from '../../product/product.model';
-
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart-list',

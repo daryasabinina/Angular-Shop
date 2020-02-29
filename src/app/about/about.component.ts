@@ -2,10 +2,9 @@ import { Component, OnInit, Optional, InjectionToken, Inject } from '@angular/co
 
 import { LocalStorageService } from '../shared/local-storage.service';
 import { ConfigOptionsService } from '../shared/config-options.service';
-import ConstantService from '../shared/constant.service';
 import { NString, GeneratorFactory } from '../shared/generator-n.service';
 import { GeneratorService } from '../shared/generator.service';
-
+import ConstantService from '../shared/constant.service';
 
 const ConstService = new InjectionToken<string>('ConstService');
 
@@ -14,8 +13,8 @@ const ConstService = new InjectionToken<string>('ConstService');
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   providers: [
-    { provide: LocalStorageService, useClass: LocalStorageService },
     ConfigOptionsService,
+    { provide: LocalStorageService, useClass: LocalStorageService },
     { provide: ConstService, useValue: ConstantService},
     { provide: NString,
       useFactory: GeneratorFactory(7),
@@ -40,5 +39,4 @@ export class AboutComponent implements OnInit {
 
     console.log(this.nString);
   }
-
 }

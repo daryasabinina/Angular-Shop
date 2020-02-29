@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Subject } from 'rxjs';
 
 import { Product } from '../product/product.model';
@@ -27,7 +26,7 @@ export class CartService {
   public totalSum = this.getFullPrice();
 
 
-  getCartContent(): Array<Product> {
+  getCartContent(): Product[] {
     return cart;
   }
 
