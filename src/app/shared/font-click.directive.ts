@@ -17,11 +17,11 @@ export class FontClickDirective {
     this.resetFont();
   }
 
-  private changeFont(fontsize: string) {
+  private changeFont(fontsize: string): void {
     this.el.nativeElement.style.fontSize = fontsize;
   }
 
-  private resetFont() {
+  private resetFont(): void {
     this.renderer.setStyle(this.el.nativeElement, 'fontSize', '16px');
   }
 }

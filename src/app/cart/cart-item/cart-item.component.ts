@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { CartService } from '../cart.service';
+import { Product } from '../../product/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -16,17 +17,17 @@ export class CartItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRemove(product) {
+  onRemove(product: Product) {
     this.cartService.removeProduct(product);
 
   }
 
-  onIncrease(product) {
-    this.cartService.changeProductQuantity(product, 'sum');
+  onIncrease(product: Product) {
+    this.cartService.changeProductQuantity(product, 1);
   }
 
-  onDecrease(product) {
-    this.cartService.changeProductQuantity(product, 'sub');
+  onDecrease(product: Product) {
+    this.cartService.changeProductQuantity(product, -1);
   }
 
 }

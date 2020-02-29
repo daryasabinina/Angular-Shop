@@ -3,6 +3,6 @@ import { GeneratorService } from './generator.service';
 
 export const NString = new InjectionToken<string>('NString');
 
-export function GeneratorFactory(n: number) {
+export function GeneratorFactory(n: number): Function {
   return (generator: GeneratorService): string => generator.getString().substr(0, n);
 }

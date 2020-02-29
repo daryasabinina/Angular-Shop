@@ -26,3 +26,10 @@ All notable changes to this project will be documented in this file.
 - Fields with content, quantity and price to CartService
 - Constant, Factory, Config services
 - Click directive on cart item
+
+## 2020-02-29
+### Changed
+- Fixed comments from code review
+- Typization fixed
+- Unit tests removed (will be added back when necessary)
+- Cart bug fixed (two same products could be added separately)
