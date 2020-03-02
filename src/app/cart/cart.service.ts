@@ -22,6 +22,7 @@ export class CartService {
   // Observable string streams
   public channel$ = this.channel.asObservable();
 
+  // Сделайте эти свойства гетерами и не нужно будет ничего им присваивать
   public totalQuantity = this.getQuantity();
   public totalSum = this.getFullPrice();
 
