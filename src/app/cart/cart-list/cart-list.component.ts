@@ -11,6 +11,8 @@ import { Product } from '../../product/product.model';
 })
 export class CartListComponent implements OnInit, OnDestroy {
 
+  options: Array<string>;
+  sorting: string;
   subscription: Subscription;
   cartContent: Product[];
   fullPrice: number;
@@ -27,6 +29,8 @@ export class CartListComponent implements OnInit, OnDestroy {
       this.fullPrice = this.cartService.getFullPrice();
       this.fullQuantity = this.cartService.getQuantity();
     });
+
+    this.options = ['name', 'price', 'quantity'];
   }
 
   ngOnDestroy() {
@@ -38,4 +42,7 @@ export class CartListComponent implements OnInit, OnDestroy {
     this.cartContent = this.cartService.getCartContent();
   }
 
+  chooseSorting(value) {
+    this.sorting = value;
+  }
 }

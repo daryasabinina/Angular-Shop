@@ -1,6 +1,6 @@
 <h1>List of products</h1>
 <ul>
-  <app-product *ngFor="let product of products"
+  <app-product *ngFor="let product of getProducts | async | orderBy:'name':false"
                [product]="product"
                (buyProduct)="onBuyProduct($event)">
   </app-product>

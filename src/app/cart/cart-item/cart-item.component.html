@@ -1,6 +1,6 @@
 <li>
   <button (click)="onRemove(product)">x</button>
-  {{product.name}} - {{product.price}},
+  {{product.name | titlecase}} - {{product.price | currency: 'USD'}},
   quantity:
   <button (click)="onIncrease(product)">+1</button>
   {{product.quantity}}

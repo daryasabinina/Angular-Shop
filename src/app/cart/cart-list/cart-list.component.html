@@ -1,7 +1,14 @@
 <h3>Cart</h3>
 <div *ngIf="cartContent.length; else elseBlock">
+  <div>Sort by
+    <select (change)="chooseSorting($event.target.value)">
+      <option *ngFor="let option of options" value={{option}}>
+        {{option}}
+      </option>
+    </select>
+  </div>
   <ol>
-    <app-cart *ngFor="let product of cartContent"
+    <app-cart *ngFor="let product of cartContent | orderBy:sorting:true"
               [product]="product"
               appFontClick="20px">
     </app-cart>
