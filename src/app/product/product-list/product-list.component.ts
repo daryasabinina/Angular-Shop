@@ -12,7 +12,7 @@ import { Product } from '../product.model';
 
 export class ProductListComponent implements OnInit {
 
-  products: Product[];
+  getProducts: Promise<any>;
 
   constructor(
     public productService: ProductService,
@@ -24,7 +24,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
+    this.getProducts = this.productService.getProducts();
   }
 
 }

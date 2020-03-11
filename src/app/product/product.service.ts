@@ -15,7 +15,10 @@ export class ProductService {
 
   constructor() { }
 
-  getProducts(): Product[] {
-    return [candy, tshirt, dress, cucumber];
+  getProducts(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      resolve([candy, tshirt, dress, cucumber]);
+      reject('error');
+    });
   }
 }

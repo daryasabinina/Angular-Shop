@@ -1,4 +1,4 @@
 <li [ngClass]="product.isAvailable ? 'active' : 'disabled'" appHover>
-  {{product.name}} - {{product.price}}
+  {{product.name | titlecase}} - {{product.price | currency: 'USD'}}
   <button [disabled]="!product.isAvailable" (click)="onBuy(product)">Buy!</button>
 </li>

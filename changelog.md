@@ -33,3 +33,16 @@ All notable changes to this project will be documented in this file.
 - Typization fixed
 - Unit tests removed (will be added back when necessary)
 - Cart bug fixed (two same products could be added separately)
+
+## 2020-03-11
+### Changed
+- Fixed comments from code review
+- Fixed bug with buying products
+- Common module registered in Shared module
+
+### Added
+- Pipes for currency and product name
+- Pipe for async method of ProductService
+- Custom pipe sortBy (Insertion Sort)
+- Items in product list sorted by default
+- Items in cart could be sort using dropdown

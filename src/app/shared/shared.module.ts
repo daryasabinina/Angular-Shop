@@ -1,19 +1,22 @@
 import { NgModule, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { HoverElementDirective } from './hover-element.directive';
-import { FontClickDirective } from './font-click.directive';
+import { HoverElementDirective } from './derectives/hover-element.directive';
+import { FontClickDirective } from './derectives/font-click.directive';
 
-import { LocalStorageService } from './local-storage.service';
-import { ConfigOptionsService } from './config-options.service';
-import ConstantService from './constant.service';
-import { GeneratorService } from './generator.service';
+import { LocalStorageService } from './services/local-storage.service';
+import { ConfigOptionsService } from './services/config-options.service';
+import ConstantService from './services/constant.service';
+import { GeneratorService } from './services/generator.service';
+
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 const ConstService = new InjectionToken<string>('ConstService');
 
 @NgModule({
-  declarations: [HoverElementDirective, FontClickDirective],
-  exports: [HoverElementDirective, FontClickDirective],
+  declarations: [HoverElementDirective, FontClickDirective, OrderByPipe],
+  exports: [HoverElementDirective, FontClickDirective, OrderByPipe, CommonModule, FormsModule],
   providers: [
     LocalStorageService,
     ConfigOptionsService,
@@ -21,7 +24,7 @@ const ConstService = new InjectionToken<string>('ConstService');
     GeneratorService
   ],
   imports: [
-    CommonModule
+    CommonModule, FormsModule
   ]
 })
 export class SharedModule { }
