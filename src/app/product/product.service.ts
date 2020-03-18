@@ -18,7 +18,7 @@ export class ProductService {
   getProducts(): Promise<any> {
     return new Promise((resolve, reject) => {
       resolve([candy, tshirt, dress, cucumber]);
-      reject('error');
+      // reject('error'); // только резолв
     });
   }
 }

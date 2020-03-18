@@ -10,6 +10,7 @@ export class OrderByPipe implements PipeTransform {
       return arr;
     }
 
+    // не нужно сортировать вручную. Есть у массивов метод sort(). Посмотрите как его применить
     const length = arr.length;
     for (let i = 1; i < length; i++) {
       const arrayItem = arr[i];
