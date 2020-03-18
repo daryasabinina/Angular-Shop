@@ -12,7 +12,7 @@ import { Product } from '../product.model';
 
 export class ProductListComponent implements OnInit {
 
-  getProducts: Promise<any>;
+  getProducts: Promise<Product[]>;
 
   constructor(
     public productService: ProductService,
